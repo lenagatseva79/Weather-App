@@ -1,0 +1,56 @@
+body {
+font-family: 'Montserrat', sans-serif;
+background-image: url(../images/pinksky.jpg);
+background-size: 100%;
+background-repeat: no-repeat;
+padding: 10px;
+margin: 100px auto;
+max-width: 850px;
+backdrop-filter: blur(50px);
+}
+
+p {
+    margin: 15px 0px;
+}
+h1 {
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+h3 {
+    margin-left: 10px;
+}
+.card {
+    border: transparent;
+}
+.week-weather {
+    margin-left: 15px;
+}
+.col-2 {
+    text-align: center;
+}
+.sun {
+    margin: 55px 60px;
+}
+.degree {
+    font-size: 20px;
+    position: relative;
+    top: -50px;
+}
+.temperature { 
+    font-size: 90px;
+    margin-top: 15px;
+}
+.card {
+    background: transparent;
+}
+.container {
+    padding: 0px;
+}
+.form-search {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: rgb(250, 240, 228);
+    text-align: center;
+}
