@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Smooch&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        <div class="card-body">
+        <form class="search-form">
+             <div class="row">
+                <div class="col-6">
+                    <input type="search" 
+                    placeholder= "Enter city name" 
+                    autofocus="on"
+                    autocomplete="off" 
+                    id="city-input"
+                    class="form-control shadow-sm"/>
+                </div>
+                <div class="col-3">
+                    <input 
+                    type="submit" 
+                    value="Search" 
+                    class="form-search"/>
+                </div>
+                <div class="col-3">
+                    <input 
+                    type="submit" 
+                    id="current-location"
+                    value="Current location" 
+                    class="form-search"/>
+                </div>
+            </div>
+        </form>
+        
+        <div class="row">
+            <div class="col-5">
+        <h1 id="city">
+          
+      </h1>  
+      <h3 id="current-date">
+          
+      </h3>
+      <h3 id="sky">
+          
+      </h3>
+    </div>
+            <div class="col-3">
+                <img src="images/sun.png" alt="sun" width="100" class="sun">
+                </div>
+                
+                <div class="col-3">
+                <span class="temperature" id="temperature">16</span>
+                    <span class="degree">
+                      <a href="#" id="celsius-link">°C</a> / 
+                     <a href="#" id="fahrenheit-link">°F</a> 
+                    </span>
+                <ul>
+                    <li>
+                        Feels like: <span id="feels"></span>°
+                    </li>
+                    <li>
+                        Humidity: <span id="humidity"></span>%
+                    </li>
+                    <li>
+                        Wind: <span id="wind"></span>m/s
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="week-weather">
+            This weeks weather
+        </p>
+      
+      <div class="row">
+          <div class="col-2">
+              <p class="days">
+                  Friday
+              </p>
+           <img src="images/storm.png" alt="storm" width="50"> 
+           <br />
+           <p class="tepmerature">
+               22°/15°
+           </p>
+          </div>
+        
+          <div class="col-2">
+              <p class="days">
+                  Saturday 
+              </p> 
+            <img src="images/cloudy.png" alt="clouds" width="50">
+            <br />
+            <p class="tepmerature">
+                22°/16°
+            </p>
+          </div>
+          
+          <div class="col-2">
+              <p class="days">
+                  Sunday
+              </p>
+              <img src="images/rain.png" alt="rain" width="50">
+              <br />
+              <p class="tepmerature">
+                  23°/15°
+              </p>
+          </div>
+         
+          <div class="col-2">
+              <p class="days">
+                  Monday
+              </p>
+              <img src="images/cloudy.png" alt="clouds" width="50">
+              <br />
+              <p class="tepmerature">
+                  22°/15°
+              </p>
+          </div>
+          
+          <div class="col-2">
+              <p class="days">
+                  Tuesday
+              </p>
+              <img src="images/clouds.png" alt="clouds" width="50">
+              <br />
+              <p class="tepmerature">
+                  19°/15°
+              </p>
+          </div>
+          
+          <div class="col-2">
+              <p class="days">
+                  Wednesday
+              </p>
+              <img src="images/stormrain.png" alt="storm" width="50">
+              <br />
+              <p class="tepmerature">
+                  18°/11°
+              </p>
+          </div>
+      </div>
+        </div>
+         </div>
+      </div>
+</body>
+
+<script src="src/data.js"></script>
+</html>
