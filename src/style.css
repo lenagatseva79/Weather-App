@@ -20,6 +20,9 @@ h1 {
 h3 {
     margin-left: 10px;
 }
+ul {
+    padding-inline-start: 20px;
+}
 .card {
     border: transparent;
 }
