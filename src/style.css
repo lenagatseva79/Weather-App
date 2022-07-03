@@ -18,7 +18,8 @@ h1 {
 }
 
 h3 {
-    margin-left: 10px;
+    margin-left: 5px;
+    text-transform: capitalize;
 }
 ul {
     padding-inline-start: 20px;
