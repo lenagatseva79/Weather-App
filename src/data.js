@@ -23,14 +23,13 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-// Feature 1
+
 let now = new Date();
 let h3 = document.querySelector("#current-date");
 h3.innerHTML = formatDate(now);
 
-// Feature 2
 
-// Feature 3
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -57,7 +56,7 @@ function showWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#sky").innerHTML = response.data.weather[0].main;
+  document.querySelector("#sky").innerHTML = response.data.weather[0].description;
   document.querySelector("#feels").innerHTML = Math.round(
     response.data.main.feels_like
   );
