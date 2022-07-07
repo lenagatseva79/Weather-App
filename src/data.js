@@ -1,14 +1,5 @@
-function formatDate(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[now.getDay()];
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
 
   let hours = now.getHours();
   if (hours < 10) {
@@ -20,15 +11,18 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-
-
-let now = new Date();
-let h3 = document.querySelector("#current-date");
-h3.innerHTML = formatDate(now);
-
-
 
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -64,7 +58,8 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  console.log(response.data);
+  let h3 = document.querySelector("#current-date");
+  h3.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(city) {
