@@ -19,6 +19,8 @@ h1 {
 
 h3 {
     margin-left: 5px;
+}
+h3:first-letter {
     text-transform: capitalize;
 }
 ul {
