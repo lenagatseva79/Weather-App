@@ -30,7 +30,7 @@ ul {
     border: transparent;
 }
 .week-weather {
-    margin-left: 15px;
+    margin-left: 25px;
 }
 .col-2 {
     text-align: center;
@@ -43,7 +43,7 @@ ul {
     position: relative;
     top: -50px;
 }
-.temperature { 
+#temperature { 
     font-size: 90px;
     line-height: 1.5;
     margin-left: 1px;
