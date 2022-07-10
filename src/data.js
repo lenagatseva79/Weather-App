@@ -24,9 +24,9 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showWeather(response) {
+function showWeather(response) { 
+  let temperatureElement = document.querySelector("#temperature");
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#sky").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#feels").innerHTML = Math.round(
@@ -39,6 +39,7 @@ function showWeather(response) {
 
   celsiusTemperature = response.data.main.temp;
 
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let h3 = document.querySelector("#current-date");
   h3.innerHTML = formatDate(response.data.dt * 1000);
 
