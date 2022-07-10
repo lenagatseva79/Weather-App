@@ -24,6 +24,7 @@ h3:first-letter {
 }
 ul {
     padding-inline-start: 20px;
+    margin-left: 120px;
 }
 .card {
     border: transparent;
@@ -34,14 +35,13 @@ ul {
 .col-2 {
     text-align: center;
 }
-.sun {
-    margin: 0px;
-    margin-bottom: 20px;
-}
 .degree {
     font-size: 20px;
     position: relative;
     top: -50px;
+}
+.main-img {
+    margin: -50px 20px 0px 70px;
 }
 #temperature { 
     font-size: 90px;
