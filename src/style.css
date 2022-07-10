@@ -64,3 +64,10 @@ ul {
 .link-source {
     margin-left: 25px;
 }
+.active {
+    color: #212529;
+    cursor: default;
+}
+.active:hover {
+    text-decoration: none;
+}
