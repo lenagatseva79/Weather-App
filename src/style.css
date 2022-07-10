@@ -1,14 +1,13 @@
 body {
 font-family: 'Montserrat', sans-serif;
-background-image: url(../images/pinksky.jpg);
-background-size: 100%;
+background-image: url(../images/pinksky4.jpg);
+background-size: cover;
 background-repeat: no-repeat;
 padding: 10px;
 margin: 100px auto;
 max-width: 850px;
 backdrop-filter: blur(50px);
 }
-
 p {
     margin: 15px 0px;
 }
