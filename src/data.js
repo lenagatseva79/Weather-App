@@ -42,8 +42,6 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-let form = document.querySelector("form");
-form.addEventListener("submit", locationSearch);
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -80,6 +78,9 @@ function locationSearch(event) {
 }
 
 search("Odesa");
+
+let form = document.querySelector("form");
+form.addEventListener("submit", locationSearch);
 
 function searchLocation(position) {
   let apiKey = "4fa2fa98e001adffeee9f1033c8280d7";
