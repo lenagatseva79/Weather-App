@@ -61,6 +61,9 @@ ul {
     background-color: rgb(250, 240, 228);
     text-align: center;
 }
+.weather-forecast {
+    margin-bottom: 20px;
+}
 .link-source {
     margin-left: 25px;
 }
