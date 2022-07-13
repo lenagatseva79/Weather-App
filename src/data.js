@@ -1,3 +1,18 @@
+let form = document.querySelector("form");
+form.addEventListener("submit", locationSearch);
+
+function searchLocation(position) {
+  let apiKey = "4fa2fa98e001adffeee9f1033c8280d7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", getCurrentLocation);
+
 function formatDate(timestamp) {
   let now = new Date(timestamp);
 
@@ -24,7 +39,116 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showWeather(response) { 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML = forecastHTML + `
+          <div class="col-2">
+              <div class="days">
+                  Friday
+              </div>
+           <img src="images/storm.png" alt="storm" width="50"> 
+           <br />
+           <div class="tepmerature-forecast">
+            <span class="max">
+                22°/
+            </span>
+            <span class="min">
+               15°
+            </span>
+           </div>
+          </div>
+        
+          <div class="col-2">
+              <div class="days">
+                  Saturday 
+              </div> 
+            <img src="images/cloudy.png" alt="clouds" width="50">
+            <br />
+            <div class="tepmerature-forecast">
+                <span class="max">
+                22°/
+            </span>
+            <span class="min">
+               15°
+            </span>
+            </div>
+          </div>
+          
+          <div class="col-2">
+              <div class="days">
+                  Sunday
+              </div>
+              <img src="images/rain.png" alt="rain" width="50">
+              <br />
+              <div class="tepmerature-forecast">
+                  <span class="max">
+                22°/
+            </span>
+            <span class="min">
+               15°
+            </span>
+              </div>
+          </div>
+         
+          <div class="col-2">
+              <div class="days">
+                  Monday
+              </div>
+              <img src="images/cloudy.png" alt="clouds" width="50">
+              <br />
+              <div class="tepmerature-forecast">
+                  <span class="max">
+                22°/
+            </span>
+            <span class="min">
+               15°
+            </span>
+              </div>
+          </div>
+          
+          <div class="col-2">
+              <div class="days">
+                  Tuesday
+              </div>
+              <img src="images/clouds.png" alt="clouds" width="50">
+              <br />
+              <div class="tepmerature-forecast">
+                  <span class="max">
+                22°/
+            </span>
+            <span class="min">
+               15°
+            </span>
+              </div>
+          </div>
+          
+          <div class="col-2">
+              <div class="days">
+                  Wednesday
+              </div>
+              <img src="images/stormrain.png" alt="storm" width="50">
+              <br />
+              <div class="tepmerature-forecast">
+                  <span class="max">
+                22°/
+            </span>
+            <span class="min">
+               15°
+            </span>
+              </div>
+          </div>
+      </div>
+        </div>
+         </div>
+      </div>
+      `;
+      forecastHTML =  forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function showWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#sky").innerHTML =
@@ -60,7 +184,6 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
-
 function convertToCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
@@ -77,8 +200,6 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
-
-
 function search(city) {
   let apiKey = "4fa2fa98e001adffeee9f1033c8280d7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -92,18 +213,4 @@ function locationSearch(event) {
 }
 
 search("Odesa");
-
-let form = document.querySelector("form");
-form.addEventListener("submit", locationSearch);
-
-function searchLocation(position) {
-  let apiKey = "4fa2fa98e001adffeee9f1033c8280d7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-let currentLocation = document.querySelector("#current-location");
-currentLocation.addEventListener("click", getCurrentLocation);
+showForecast();
