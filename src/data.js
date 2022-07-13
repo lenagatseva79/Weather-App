@@ -42,11 +42,14 @@ function formatDate(timestamp) {
 function showForecast() {
   let forecastElement = document.querySelector("#forecast");
 
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
   let forecastHTML = `<div class="row">`;
-  forecastHTML = forecastHTML + `
+  days.forEach(function(day) {
+    forecastHTML = forecastHTML +
+      `
           <div class="col-2">
               <div class="days">
-                  Friday
+                  ${day}
               </div>
            <img src="images/storm.png" alt="storm" width="50"> 
            <br />
@@ -59,92 +62,10 @@ function showForecast() {
             </span>
            </div>
           </div>
-        
-          <div class="col-2">
-              <div class="days">
-                  Saturday 
-              </div> 
-            <img src="images/cloudy.png" alt="clouds" width="50">
-            <br />
-            <div class="tepmerature-forecast">
-                <span class="max">
-                22°/
-            </span>
-            <span class="min">
-               15°
-            </span>
-            </div>
-          </div>
-          
-          <div class="col-2">
-              <div class="days">
-                  Sunday
-              </div>
-              <img src="images/rain.png" alt="rain" width="50">
-              <br />
-              <div class="tepmerature-forecast">
-                  <span class="max">
-                22°/
-            </span>
-            <span class="min">
-               15°
-            </span>
-              </div>
-          </div>
-         
-          <div class="col-2">
-              <div class="days">
-                  Monday
-              </div>
-              <img src="images/cloudy.png" alt="clouds" width="50">
-              <br />
-              <div class="tepmerature-forecast">
-                  <span class="max">
-                22°/
-            </span>
-            <span class="min">
-               15°
-            </span>
-              </div>
-          </div>
-          
-          <div class="col-2">
-              <div class="days">
-                  Tuesday
-              </div>
-              <img src="images/clouds.png" alt="clouds" width="50">
-              <br />
-              <div class="tepmerature-forecast">
-                  <span class="max">
-                22°/
-            </span>
-            <span class="min">
-               15°
-            </span>
-              </div>
-          </div>
-          
-          <div class="col-2">
-              <div class="days">
-                  Wednesday
-              </div>
-              <img src="images/stormrain.png" alt="storm" width="50">
-              <br />
-              <div class="tepmerature-forecast">
-                  <span class="max">
-                22°/
-            </span>
-            <span class="min">
-               15°
-            </span>
-              </div>
-          </div>
-      </div>
-        </div>
-         </div>
-      </div>
-      `;
-      forecastHTML =  forecastHTML + `</div>`;
+          `;
+  });
+  
+  forecastHTML =  forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
