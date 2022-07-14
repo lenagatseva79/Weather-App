@@ -39,27 +39,37 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function(day) {
-    forecastHTML = forecastHTML +
+  forecast.forEach(function(forecastDay) {
+    forecastHTML =
+      forecastHTML +
       `
           <div class="col-2">
               <div class="days">
-                  ${day}
+                  ${formatDay(forecastDay.dt)}
               </div>
-           <img src="images/storm.png" alt="storm" width="50"> 
-           <br />
-           <div class="tepmerature-forecast">
+           <img src=""http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+           alt="storm" 
+           width="50"> 
+           <div class="tepmerature-forecast"> 
             <span class="max">
-                22°/
-            </span>
+                ${Math.round(forecastDay.temp.max)}°
+            </span>/
             <span class="min">
-               15°
+               ${Math.round(forecastDay.temp.min)}°
             </span>
            </div>
           </div>
