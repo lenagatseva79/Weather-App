@@ -63,10 +63,11 @@ function showForecast(response) {
                   ${formatDay(forecastDay.dt)}
               </div>
               ${index}
-           <img src=""http://openweathermap.org/img/wn/${
+           <img 
+           src=""http://openweathermap.org/img/wn/${
              forecastDay.weather[0].icon
-           }@2x.png" 
-           alt="storm" 
+           }@2x.png"
+           alt="" 
            width="50"> 
            <div class="tepmerature-forecast"> 
             <span class="max">
