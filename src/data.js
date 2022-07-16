@@ -52,33 +52,6 @@ function formatDay(timestamp) {
 }
 
 
-//This function change the weather image from the medias folder
-function displayImage(icon) {
-  let iconPath = "";
-  if (icon === `01d` || icon === "01n") {
-    iconPath = "images/sun.png";
-  } else if (icon === `02d` || icon === "02n") {
-    iconPath = "images/cloudy.png";
-  } else if (
-    icon === `03d` ||
-    icon === `04d` ||
-    icon === `03n` ||
-    icon === `04n`
-  ) {
-    iconPath = "images/clouds.png";
-  } else if (icon === `09d` || icon === `09n`) {
-    iconPath = "images/stormrain.png";
-  } else if (icon === `10d` || icon === `10n`) {
-    iconPath = "images/rain.png";
-  } else if (icon === `11d` || icon === `11n`) {
-    iconPath = "images/storm.png";
-  } else if (icon === `13d` || icon === `13n`) {
-    iconPath = "images/snow.png";
-  }
-
-  return iconPath;
-}
-
 //This function display the forecast COLUMNS
 function showForecast(response) {
   let forecast = response.data.daily;
@@ -118,6 +91,32 @@ function showForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+//This function change the weather image from the medias folder
+function displayImage(icon) {
+  let iconPath = "";
+  if (icon === `01d` || icon === "01n") {
+    iconPath = "images/sun.png";
+  } else if (icon === `02d` || icon === "02n") {
+    iconPath = "images/cloudy.png";
+  } else if (
+    icon === `03d` ||
+    icon === `04d` ||
+    icon === `03n` ||
+    icon === `04n`
+  ) {
+    iconPath = "images/clouds.png";
+  } else if (icon === `09d` || icon === `09n`) {
+    iconPath = "images/stormrain.png";
+  } else if (icon === `10d` || icon === `10n`) {
+    iconPath = "images/rain.png";
+  } else if (icon === `11d` || icon === `11n`) {
+    iconPath = "images/storm.png";
+  } else if (icon === `13d` || icon === `13n`) {
+    iconPath = "images/snow.png";
+  }
+
+  return iconPath;
+}
 
 // This function get the coordinates
 function getForecast(coordinates) {
@@ -147,13 +146,11 @@ function showWeather(response) {
   let h3 = document.querySelector("#current-date");
   h3.innerHTML = formatDate(response.data.dt * 1000);
 
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  let image = document.querySelector("#icon");
+  let icon = response.data.weather["0"].icon;
 
+  image.setAttribute("src", displayImage(icon));
+  
   getForecast(response.data.coord);
 }
 
