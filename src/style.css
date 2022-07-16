@@ -6,6 +6,7 @@ background-repeat: no-repeat;
 padding: 10px;
 margin: 100px auto;
 max-width: 850px;
+min-width: 850px;
 backdrop-filter: blur(50px);
 }
 p {
