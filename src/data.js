@@ -71,7 +71,7 @@ function showForecast(response) {
            <img 
            src="${displayImage(forecastDay.weather[0].icon)}"
            alt="" 
-           width="50"
+           width="48"
            /> 
            <div class="tepmerature-forecast"> 
             <span class="max">

@@ -24,7 +24,7 @@ h3:first-letter {
 }
 ul {
     padding-inline-start: 20px;
-    margin-left: 120px;
+    margin-left: 145px;
 }
 .card {
     border: transparent;
@@ -41,7 +41,7 @@ ul {
     top: -50px;
 }
 .main-img {
-    margin: -50px 20px 0px 70px;
+    margin: -50px 20px 0px 40px;
 }
 #temperature { 
     font-size: 90px;
