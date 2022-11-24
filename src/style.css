@@ -43,6 +43,10 @@ ul {
 }
 .main-img {
     margin: -50px 20px 0px 40px;
+    filter: drop-shadow(2px 4px 8px #9a9a9a);
+}
+.forecast-icons {
+      filter: drop-shadow(2px 4px 8px #9a9a9a);
 }
 #temperature { 
     font-size: 90px;
